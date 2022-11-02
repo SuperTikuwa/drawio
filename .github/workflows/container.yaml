@@ -11,6 +11,8 @@ jobs:
       - name: Build png images
         run: |
           mkdir -p output
+          random > $(random).txt
+          
 
       - name: Commit images
         run: |
