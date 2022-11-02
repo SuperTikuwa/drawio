@@ -11,7 +11,7 @@ jobs:
       - name: Build png images
         run: |
           cat /etc/os-release
-          ls -al > hoge.txt
+          ls -al > output/hoge.txt
       
       - name: "Upload Failed Tests' Diffs"
         uses: actions/upload-artifact@v3
