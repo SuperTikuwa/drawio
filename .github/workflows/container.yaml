@@ -11,8 +11,13 @@ jobs:
 
       - name: Build png images
         run: |
-          mkdir -p output
-          date +%Y/%m/%H:%M:%s > output/$(date +%Y%m%H:%M:%s).txt
+          mkdir -p artifact
+          date +%Y/%m/%H:%M:%s > artifact/$(date +%Y%m%H:%M:%s).txt
+
+      - name: Save Images
+        uses: actions/upload-artifct@v3
+        with:
+          path: artifact
 
   push:
     runs-on: ubuntu-latest
