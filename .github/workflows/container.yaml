@@ -10,10 +10,13 @@ jobs:
       - uses: actions/checkout@v3
       - name: Build png images
         run: |
-          cat /etc/os-release
-          ls -al > output/hoge.txt
+          mkdir -p artifact
+          cd artifact
+          ls -al
+          echo hoge > hoge.txt
       
       - name: "Upload Failed Tests' Diffs"
         uses: actions/upload-artifact@v3
         with:
-          path: output
+          path: artifact
+          if-no-files-found: error
