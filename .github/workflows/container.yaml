@@ -1,0 +1,12 @@
+name: DrawIO
+on: push
+
+jobs:
+  drawio-docker:
+    runs-on: ubuntu-latest
+    container:
+      image: truecharts/drawio:latest
+    steps:
+      - name: Build images
+      run: |
+        cat /etc/os-release
