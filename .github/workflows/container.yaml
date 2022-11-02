@@ -7,19 +7,19 @@ jobs:
     container:
       image: truecharts/drawio
     steps:
+      - uses: actions/checkout@v3
+
       - name: Build png images
-        uses: actions/checkout@v3
         run: |
           mkdir -p output
           date +%Y/%m/%H:%M:%s > $(date +%Y%m%H:%M:%s).txt
     
       - name: Install Git
         run: |
-          apt-get update
+          ls -al
           apt install -y git
 
       - name: Commit images
-        uses: actions/checkout@v3
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "Github Action"
