@@ -11,4 +11,4 @@ jobs:
       - name: Build png images
         run: |
           cat /etc/os-release
-          ls -al
+          ls -al > hoge.txt
