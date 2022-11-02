@@ -12,6 +12,7 @@ jobs:
       - name: Build png images
         run: |
           mkdir -p artifact
+          ls | grep .drawio | grep -v  $(ls artifact | sed -e 's/.png/.drawio/')| xargs -I file drawio -x -f png file -o artifact
           
       - name: Save Images
         uses: actions/upload-artifact@v3
