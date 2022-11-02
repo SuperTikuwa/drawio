@@ -2,7 +2,7 @@ name: Container
 on: push
 
 jobs:
-  drawio-docker:
+  build:
     runs-on: ubuntu-latest
     container:
       image: truecharts/drawio
@@ -21,6 +21,7 @@ jobs:
 
   push:
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - uses: actions/checkout@v3
 
