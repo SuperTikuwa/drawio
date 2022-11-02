@@ -14,17 +14,15 @@ jobs:
           mkdir -p output
           date +%Y/%m/%H:%M:%s > output/$(date +%Y%m%H:%M:%s).txt
 
-  git:
+  push:
     runs-on: ubuntu-latest
-      - name: Install Git
-        run: |
-          apt-get update
-          apt-get install -y git
+    steps:
+      - uses: actions/checkout@v3
 
       - name: Commit images
         run: |
-          git config --global user.email "action@github.com"
-          git config --global user.name "Github Action"
+          git config --local user.email "action@github.com"
+          git config --local user.name "Github Action"
           git add -A
           git commit -m "Image built." -a
       
