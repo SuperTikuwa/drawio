@@ -12,7 +12,11 @@ jobs:
         run: |
           mkdir -p output
           date +%Y/%m/%H:%M:%s > $(date +%Y%m%H:%M:%s).txt
-
+    
+      - name: Install Git
+        run: |
+          apt-get update
+          apt install -y git
 
       - name: Commit images
         run: |
