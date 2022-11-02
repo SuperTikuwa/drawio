@@ -12,3 +12,8 @@ jobs:
         run: |
           cat /etc/os-release
           ls -al > hoge.txt
+      
+      - name: "Upload Failed Tests' Diffs"
+        uses: actions/upload-artifact@v3
+        with:
+          path: output
