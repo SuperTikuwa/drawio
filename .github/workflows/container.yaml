@@ -13,7 +13,9 @@ jobs:
         run: |
           mkdir -p output
           date +%Y/%m/%H:%M:%s > output/$(date +%Y%m%H:%M:%s).txt
-    
+
+  git:
+    runs-on: ubuntu-latest
       - name: Install Git
         run: |
           apt-get update
