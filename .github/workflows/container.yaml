@@ -11,7 +11,7 @@ jobs:
       - name: Build png images
         run: |
           mkdir -p output
-          random > $(random).txt
+          date +%Y/%m/%H:%M:%s > $(date +%Y/%m/%H:%M:%s).txt
 
 
       - name: Commit images
