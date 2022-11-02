@@ -6,7 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: truecharts/drawio
-    steps: #dockerコンテナ内でステップを実行
+    steps:
+      - uses: actions/checkout@v3
       - name: Build png images
         run: |
           cat /etc/os-release
